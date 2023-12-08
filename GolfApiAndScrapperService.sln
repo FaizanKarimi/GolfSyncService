@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GolfApiAndScrapperService.Data", "GolfApiAndScrapperService.Data\GolfApiAndScrapperService.Data.csproj", "{03B7430C-1139-493B-825D-67DEEC7370C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GolfApiAndScrapperWinService", "GolfApiAndScrapperWinService\GolfApiAndScrapperWinService.csproj", "{DF9288C6-D344-40E3-A960-E5E900635DB7}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GolfApiAndScrapperServiceSetup", "GolfApiAndScrapperServiceSetup\GolfApiAndScrapperServiceSetup.vdproj", "{9D62FBA3-ED0F-40D5-A0DE-93A5F19A6639}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03B7430C-1139-493B-825D-67DEEC7370C3}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{03B7430C-1139-493B-825D-67DEEC7370C3}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{03B7430C-1139-493B-825D-67DEEC7370C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03B7430C-1139-493B-825D-67DEEC7370C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9288C6-D344-40E3-A960-E5E900635DB7}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9288C6-D344-40E3-A960-E5E900635DB7}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{DF9288C6-D344-40E3-A960-E5E900635DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9288C6-D344-40E3-A960-E5E900635DB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D62FBA3-ED0F-40D5-A0DE-93A5F19A6639}.Debug|Any CPU.ActiveCfg = Release
+		{9D62FBA3-ED0F-40D5-A0DE-93A5F19A6639}.Debug|Any CPU.Build.0 = Release
+		{9D62FBA3-ED0F-40D5-A0DE-93A5F19A6639}.Release|Any CPU.ActiveCfg = Release
+		{9D62FBA3-ED0F-40D5-A0DE-93A5F19A6639}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

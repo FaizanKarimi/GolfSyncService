@@ -1,0 +1,1047 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SportsDataPanelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ContestGroupRounds">
+          <Key>
+            <PropertyRef Name="ContestGroupRoundId" />
+          </Key>
+          <Property Name="ContestGroupRoundId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContestGroupId" Type="int" Nullable="false" />
+          <Property Name="Round" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="change_stamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="ContestGroups">
+          <Key>
+            <PropertyRef Name="ContestGroupId" />
+          </Key>
+          <Property Name="ContestGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemId" Type="bigint" />
+          <Property Name="SportId" Type="smallint" Nullable="false" />
+          <Property Name="LeagueId" Type="int" Nullable="false" />
+          <Property Name="SeasonId" Type="smallint" Nullable="false" />
+          <Property Name="CountryId" Type="smallint" />
+          <Property Name="SportOrganizationId" Type="smallint" />
+          <Property Name="GenderId" Type="smallint" Nullable="false" />
+          <Property Name="LeagueTypeId" Type="smallint" Nullable="false" />
+          <Property Name="LTTypeAndSurfaceId" Type="smallint" />
+          <Property Name="ContestTypeId" Type="smallint" />
+          <Property Name="ContestGroupName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShortCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileShortName" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsInternational" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsLive" Type="bit" Nullable="false" />
+          <Property Name="Ranking" Type="nvarchar" MaxLength="50" />
+          <Property Name="HasTable" Type="bit" />
+          <Property Name="NameEnglish" Type="nvarchar" MaxLength="200" />
+          <Property Name="NameDanish" Type="nvarchar" MaxLength="200" />
+          <Property Name="NameNorwegian" Type="nvarchar" MaxLength="200" />
+          <Property Name="NameSwedish" Type="nvarchar" MaxLength="200" />
+          <Property Name="NameDeutsche" Type="nvarchar" MaxLength="200" />
+          <Property Name="NameItalian" Type="nvarchar" MaxLength="200" />
+          <Property Name="NameSpanish" Type="nvarchar" MaxLength="200" />
+          <Property Name="NameSerbian" Type="nvarchar" MaxLength="200" />
+          <Property Name="SportCCContestGroupId" Type="nvarchar" MaxLength="15" />
+          <Property Name="CrawlerLink" Type="nvarchar" MaxLength="1000" />
+          <Property Name="AutoUpdateMatches" Type="bit" />
+          <Property Name="SharkScoresId" Type="int" />
+          <Property Name="Goals" Type="bit" />
+          <Property Name="Cards" Type="bit" />
+          <Property Name="Subs" Type="bit" />
+          <Property Name="Lineups" Type="bit" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="Finished" Type="bit" />
+          <Property Name="WinPoints" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="WinETPenPoints" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="LossPoints" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="LossETPenPoints" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="change_stamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="TotalContestTeams" Type="int" />
+          <Property Name="LeagueNote" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Bet365LeagueId" Type="int" />
+          <Property Name="FixtureLink1" Type="nvarchar" MaxLength="500" />
+          <Property Name="FixtureLink2" Type="nvarchar" MaxLength="500" />
+          <Property Name="FixtureLink3" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemId" Type="bigint" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code1" Type="nvarchar" MaxLength="10" />
+          <Property Name="Code2" Type="nvarchar" MaxLength="10" />
+          <Property Name="CountryNameGerman" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryNameDanish" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryNameSwedish" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryNameNorwegian" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryNameItalian" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryNameSpanish" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryNameFrench" Type="nvarchar" MaxLength="50" />
+          <Property Name="SportCCCountryId" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="SharkScoresCountryId" Type="int" />
+          <Property Name="change_stamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="GolfCompetitions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContestGroupId" Type="int" Nullable="false" />
+          <Property Name="PlayerId" Type="int" Nullable="false" />
+          <Property Name="TotalPointsStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="TotalPointsStrokes" Type="int" />
+          <Property Name="TotalPointsTotalToPar" Type="int" />
+          <Property Name="TotalPointsPosition" Type="nvarchar" MaxLength="10" />
+          <Property Name="TotalPointsTied" Type="int" />
+          <Property Name="TotalPointsPlayoffs" Type="nvarchar" MaxLength="10" />
+          <Property Name="Thru" Type="nvarchar" MaxLength="20" />
+          <Property Name="TotalPointsLastPosition" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GolfHolesPoints">
+          <Key>
+            <PropertyRef Name="GolfHoleId" />
+          </Key>
+          <Property Name="GolfHoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GolfCompetitionId" Type="int" Nullable="false" />
+          <Property Name="ContestGroupRoundId" Type="int" Nullable="false" />
+          <Property Name="HolePoint" Type="nvarchar" MaxLength="3" />
+          <Property Name="ParPoint" Type="nvarchar" MaxLength="3" />
+          <Property Name="PointTypeId" Type="int" />
+          <Property Name="Yards" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="GolfScores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GolfCompetitionId" Type="int" Nullable="false" />
+          <Property Name="ContestGroupRoundId" Type="int" Nullable="false" />
+          <Property Name="RoundStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="RoundStrokes" Type="nvarchar" MaxLength="10" />
+          <Property Name="RoundTotalPar" Type="int" />
+          <Property Name="RoundHolesPlayed" Type="int" />
+          <Property Name="RoundTeeTime" Type="nvarchar" MaxLength="20" />
+          <Property Name="RoundCourse" Type="nvarchar" MaxLength="20" />
+          <Property Name="RoundStartingTee" Type="int" />
+          <Property Name="RoundPosition" Type="nvarchar" MaxLength="10" />
+          <Property Name="RoundTied" Type="nvarchar" MaxLength="10" />
+          <Property Name="StartHoleValue" Type="int" Nullable="false" />
+          <Property Name="Thru" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Players">
+          <Key>
+            <PropertyRef Name="PlayerId" />
+          </Key>
+          <Property Name="PlayerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemId" Type="bigint" />
+          <Property Name="SportId" Type="smallint" Nullable="false" />
+          <Property Name="CountryId" Type="smallint" />
+          <Property Name="GenderId" Type="smallint" Nullable="false" />
+          <Property Name="PlayerPositionId" Type="smallint" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OtherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hand" Type="nvarchar" MaxLength="15" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Height" Type="nvarchar" MaxLength="20" />
+          <Property Name="Weight" Type="nvarchar" MaxLength="20" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="SportCCPlayerId" Type="nvarchar" MaxLength="15" />
+          <Property Name="MarketValue" Type="nvarchar" MaxLength="30" />
+          <Property Name="Foot" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlayerAgent" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthCityId" Type="smallint" />
+          <Property Name="BirthCountryId" Type="smallint" />
+          <Property Name="PlayerImage" Type="nvarchar" MaxLength="500" />
+          <Property Name="SportingLifePlayerId" Type="bigint" />
+          <Property Name="MatchedWithProvider" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedByRole" Type="nvarchar" MaxLength="256" />
+          <Property Name="SharkScoresId" Type="int" />
+          <Property Name="SoccerwayPlayerId" Type="int" />
+          <Property Name="Age" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryOfBirth" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlaceOfBirth" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatsComPlayerId" Type="int" />
+          <Property Name="change_stamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Seasons">
+          <Key>
+            <PropertyRef Name="SeasonId" />
+          </Key>
+          <Property Name="SeasonId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemId" Type="bigint" />
+          <Property Name="SeasonName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Code1" Type="nvarchar" MaxLength="10" />
+          <Property Name="Code2" Type="nvarchar" MaxLength="10" />
+          <Property Name="SeasonNameGerman" Type="nvarchar" MaxLength="20" />
+          <Property Name="SeasonNameDanish" Type="nvarchar" MaxLength="20" />
+          <Property Name="SeasonNameSwedish" Type="nvarchar" MaxLength="20" />
+          <Property Name="SeasonNameNorwegian" Type="nvarchar" MaxLength="20" />
+          <Property Name="SeasonNameItalian" Type="nvarchar" MaxLength="20" />
+          <Property Name="SeasonNameSpanish" Type="nvarchar" MaxLength="20" />
+          <Property Name="SeasonNameFrench" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="SportCCSeasonId" Type="nvarchar" MaxLength="10" />
+          <Property Name="SortOrder" Type="smallint" />
+          <Property Name="change_stamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Venues">
+          <Key>
+            <PropertyRef Name="VenueId" />
+          </Key>
+          <Property Name="VenueId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemId" Type="bigint" />
+          <Property Name="SportId" Type="smallint" Nullable="false" />
+          <Property Name="CountryId" Type="smallint" Nullable="false" />
+          <Property Name="CityId" Type="smallint" />
+          <Property Name="VenueName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EstablishedDate" Type="datetime" />
+          <Property Name="Capacity" Type="int" />
+          <Property Name="ContestGroup" Type="nvarchar" MaxLength="100" />
+          <Property Name="CourtNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="SportCCVenueId" Type="nvarchar" MaxLength="15" />
+          <Property Name="CreatedByRole" Type="nvarchar" MaxLength="256" />
+          <Property Name="change_stamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <Association Name="FK_ContestGroupRounds_ContestGroups">
+          <End Role="ContestGroups" Type="Self.ContestGroups" Multiplicity="1" />
+          <End Role="ContestGroupRounds" Type="Self.ContestGroupRounds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContestGroups">
+              <PropertyRef Name="ContestGroupId" />
+            </Principal>
+            <Dependent Role="ContestGroupRounds">
+              <PropertyRef Name="ContestGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContestGroups_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="ContestGroups" Type="Self.ContestGroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="ContestGroups">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContestGroups_Seasons">
+          <End Role="Seasons" Type="Self.Seasons" Multiplicity="1" />
+          <End Role="ContestGroups" Type="Self.ContestGroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seasons">
+              <PropertyRef Name="SeasonId" />
+            </Principal>
+            <Dependent Role="ContestGroups">
+              <PropertyRef Name="SeasonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GolfCompetitions_ContestGroups">
+          <End Role="ContestGroups" Type="Self.ContestGroups" Multiplicity="1" />
+          <End Role="GolfCompetitions" Type="Self.GolfCompetitions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContestGroups">
+              <PropertyRef Name="ContestGroupId" />
+            </Principal>
+            <Dependent Role="GolfCompetitions">
+              <PropertyRef Name="ContestGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GolfCompetitions_Players">
+          <End Role="Players" Type="Self.Players" Multiplicity="1" />
+          <End Role="GolfCompetitions" Type="Self.GolfCompetitions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="PlayerId" />
+            </Principal>
+            <Dependent Role="GolfCompetitions">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GolfScores_ContestGroupRounds">
+          <End Role="ContestGroupRounds" Type="Self.ContestGroupRounds" Multiplicity="1" />
+          <End Role="GolfScores" Type="Self.GolfScores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContestGroupRounds">
+              <PropertyRef Name="ContestGroupRoundId" />
+            </Principal>
+            <Dependent Role="GolfScores">
+              <PropertyRef Name="ContestGroupRoundId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GolfScores_GolfCompetitions">
+          <End Role="GolfCompetitions" Type="Self.GolfCompetitions" Multiplicity="1" />
+          <End Role="GolfScores" Type="Self.GolfScores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GolfCompetitions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GolfScores">
+              <PropertyRef Name="GolfCompetitionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Venues_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+          <End Role="Venues" Type="Self.Venues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Venues">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetGolfLiveContestGroupPlayers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TourType" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetGolfLiveContestGroups" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetGolfLiveContestGroupsEUTour" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetGolfLiveContestGroupsPgaTour" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetNextContestGroupId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetNextPlayerId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetNextVenueId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="SportsDataPanelModelStoreContainer">
+          <EntitySet Name="ContestGroupRounds" EntityType="Self.ContestGroupRounds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContestGroups" EntityType="Self.ContestGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GolfCompetitions" EntityType="Self.GolfCompetitions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GolfHolesPoints" EntityType="Self.GolfHolesPoints" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GolfScores" EntityType="Self.GolfScores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seasons" EntityType="Self.Seasons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Venues" EntityType="Self.Venues" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ContestGroupRounds_ContestGroups" Association="Self.FK_ContestGroupRounds_ContestGroups">
+            <End Role="ContestGroups" EntitySet="ContestGroups" />
+            <End Role="ContestGroupRounds" EntitySet="ContestGroupRounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContestGroups_Countries" Association="Self.FK_ContestGroups_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="ContestGroups" EntitySet="ContestGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContestGroups_Seasons" Association="Self.FK_ContestGroups_Seasons">
+            <End Role="Seasons" EntitySet="Seasons" />
+            <End Role="ContestGroups" EntitySet="ContestGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GolfCompetitions_ContestGroups" Association="Self.FK_GolfCompetitions_ContestGroups">
+            <End Role="ContestGroups" EntitySet="ContestGroups" />
+            <End Role="GolfCompetitions" EntitySet="GolfCompetitions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GolfCompetitions_Players" Association="Self.FK_GolfCompetitions_Players">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="GolfCompetitions" EntitySet="GolfCompetitions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GolfScores_ContestGroupRounds" Association="Self.FK_GolfScores_ContestGroupRounds">
+            <End Role="ContestGroupRounds" EntitySet="ContestGroupRounds" />
+            <End Role="GolfScores" EntitySet="GolfScores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GolfScores_GolfCompetitions" Association="Self.FK_GolfScores_GolfCompetitions">
+            <End Role="GolfCompetitions" EntitySet="GolfCompetitions" />
+            <End Role="GolfScores" EntitySet="GolfScores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Venues_Countries" Association="Self.FK_Venues_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Venues" EntitySet="Venues" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SportsDataPanelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ContestGroup">
+          <Key>
+            <PropertyRef Name="ContestGroupId" />
+          </Key>
+          <Property Name="ContestGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemId" Type="Int64" />
+          <Property Name="SportId" Type="Int16" Nullable="false" />
+          <Property Name="LeagueId" Type="Int32" Nullable="false" />
+          <Property Name="SeasonId" Type="Int16" Nullable="false" />
+          <Property Name="CountryId" Type="Int16" />
+          <Property Name="SportOrganizationId" Type="Int16" />
+          <Property Name="GenderId" Type="Int16" Nullable="false" />
+          <Property Name="LeagueTypeId" Type="Int16" Nullable="false" />
+          <Property Name="LTTypeAndSurfaceId" Type="Int16" />
+          <Property Name="ContestTypeId" Type="Int16" />
+          <Property Name="ContestGroupName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShortCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileShortName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsInternational" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsLive" Type="Boolean" Nullable="false" />
+          <Property Name="Ranking" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HasTable" Type="Boolean" />
+          <Property Name="NameEnglish" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NameDanish" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NameNorwegian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NameSwedish" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NameDeutsche" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NameItalian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NameSpanish" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NameSerbian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SportCCContestGroupId" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CrawlerLink" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="AutoUpdateMatches" Type="Boolean" />
+          <Property Name="SharkScoresId" Type="Int32" />
+          <Property Name="Goals" Type="Boolean" />
+          <Property Name="Cards" Type="Boolean" />
+          <Property Name="Subs" Type="Boolean" />
+          <Property Name="Lineups" Type="Boolean" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="Finished" Type="Boolean" />
+          <Property Name="WinPoints" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WinETPenPoints" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="LossPoints" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="LossETPenPoints" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="change_stamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="TotalContestTeams" Type="Int32" />
+          <Property Name="LeagueNote" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Bet365LeagueId" Type="Int32" />
+          <Property Name="FixtureLink1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FixtureLink2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FixtureLink3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GolfCompetitions" Relationship="Self.FK_GolfCompetitions_ContestGroups" FromRole="ContestGroups" ToRole="GolfCompetitions" />
+          <NavigationProperty Name="ContestGroupRounds" Relationship="SportsDataPanelModel.FK_ContestGroupRounds_ContestGroups" FromRole="ContestGroup" ToRole="ContestGroupRound" />
+          <NavigationProperty Name="Country" Relationship="SportsDataPanelModel.FK_ContestGroups_Countries" FromRole="ContestGroup" ToRole="Country" />
+          <NavigationProperty Name="Season" Relationship="SportsDataPanelModel.FK_ContestGroups_Seasons" FromRole="ContestGroup" ToRole="Season" />
+        </EntityType>
+        <EntityType Name="GolfCompetition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContestGroupId" Type="Int32" Nullable="false" />
+          <Property Name="PlayerId" Type="Int32" Nullable="false" />
+          <Property Name="TotalPointsStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TotalPointsStrokes" Type="Int32" />
+          <Property Name="TotalPointsTotalToPar" Type="Int32" />
+          <Property Name="TotalPointsPosition" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TotalPointsTied" Type="Int32" />
+          <Property Name="TotalPointsPlayoffs" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Thru" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TotalPointsLastPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ContestGroup" Relationship="Self.FK_GolfCompetitions_ContestGroups" FromRole="GolfCompetitions" ToRole="ContestGroups" />
+          <NavigationProperty Name="Player" Relationship="Self.FK_GolfCompetitions_Players" FromRole="GolfCompetitions" ToRole="Players" />
+          <NavigationProperty Name="GolfScores" Relationship="Self.FK_GolfScores_GolfCompetitions" FromRole="GolfCompetitions" ToRole="GolfScores" />
+        </EntityType>
+        <EntityType Name="GolfScore">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GolfCompetitionId" Type="Int32" Nullable="false" />
+          <Property Name="ContestGroupRoundId" Type="Int32" Nullable="false" />
+          <Property Name="RoundStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RoundStrokes" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RoundTotalPar" Type="Int32" />
+          <Property Name="RoundHolesPlayed" Type="Int32" />
+          <Property Name="RoundTeeTime" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RoundCourse" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RoundStartingTee" Type="Int32" />
+          <Property Name="RoundPosition" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RoundTied" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GolfCompetition" Relationship="Self.FK_GolfScores_GolfCompetitions" FromRole="GolfScores" ToRole="GolfCompetitions" />
+          <NavigationProperty Name="ContestGroupRound" Relationship="SportsDataPanelModel.FK_GolfScores_ContestGroupRounds" FromRole="GolfScore" ToRole="ContestGroupRound" />
+          <Property Name="StartHoleValue" Type="Int32" Nullable="false" />
+          <Property Name="Thru" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="PlayerId" />
+          </Key>
+          <Property Name="PlayerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemId" Type="Int64" />
+          <Property Name="SportId" Type="Int16" Nullable="false" />
+          <Property Name="CountryId" Type="Int16" />
+          <Property Name="GenderId" Type="Int16" Nullable="false" />
+          <Property Name="PlayerPositionId" Type="Int16" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OtherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hand" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Height" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="SportCCPlayerId" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="MarketValue" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Foot" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlayerAgent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthCityId" Type="Int16" />
+          <Property Name="BirthCountryId" Type="Int16" />
+          <Property Name="PlayerImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SportingLifePlayerId" Type="Int64" />
+          <Property Name="MatchedWithProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByRole" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="SharkScoresId" Type="Int32" />
+          <Property Name="SoccerwayPlayerId" Type="Int32" />
+          <Property Name="Age" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlaceOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StatsComPlayerId" Type="Int32" />
+          <Property Name="change_stamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="GolfCompetitions" Relationship="Self.FK_GolfCompetitions_Players" FromRole="Players" ToRole="GolfCompetitions" />
+        </EntityType>
+        <EntityType Name="Venue">
+          <Key>
+            <PropertyRef Name="VenueId" />
+          </Key>
+          <Property Name="VenueId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemId" Type="Int64" />
+          <Property Name="SportId" Type="Int16" Nullable="false" />
+          <Property Name="CountryId" Type="Int16" Nullable="false" />
+          <Property Name="CityId" Type="Int16" />
+          <Property Name="VenueName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EstablishedDate" Type="DateTime" Precision="3" />
+          <Property Name="Capacity" Type="Int32" />
+          <Property Name="ContestGroup" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CourtNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SportCCVenueId" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByRole" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="change_stamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Country" Relationship="SportsDataPanelModel.FK_Venues_Countries" FromRole="Venue" ToRole="Country" />
+        </EntityType>
+        <Association Name="FK_GolfCompetitions_ContestGroups">
+          <End Role="ContestGroups" Type="Self.ContestGroup" Multiplicity="1" />
+          <End Role="GolfCompetitions" Type="Self.GolfCompetition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContestGroups">
+              <PropertyRef Name="ContestGroupId" />
+            </Principal>
+            <Dependent Role="GolfCompetitions">
+              <PropertyRef Name="ContestGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GolfCompetitions_Players">
+          <End Role="Players" Type="Self.Player" Multiplicity="1" />
+          <End Role="GolfCompetitions" Type="Self.GolfCompetition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="PlayerId" />
+            </Principal>
+            <Dependent Role="GolfCompetitions">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GolfScores_GolfCompetitions">
+          <End Role="GolfCompetitions" Type="Self.GolfCompetition" Multiplicity="1" />
+          <End Role="GolfScores" Type="Self.GolfScore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GolfCompetitions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GolfScores">
+              <PropertyRef Name="GolfCompetitionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SportsDataPanelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ContestGroups" EntityType="Self.ContestGroup" />
+          <EntitySet Name="GolfCompetitions" EntityType="Self.GolfCompetition" />
+          <EntitySet Name="GolfScores" EntityType="Self.GolfScore" />
+          <EntitySet Name="Players" EntityType="Self.Player" />
+          <EntitySet Name="Venues" EntityType="Self.Venue" />
+          <AssociationSet Name="FK_GolfCompetitions_ContestGroups" Association="Self.FK_GolfCompetitions_ContestGroups">
+            <End Role="ContestGroups" EntitySet="ContestGroups" />
+            <End Role="GolfCompetitions" EntitySet="GolfCompetitions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GolfCompetitions_Players" Association="Self.FK_GolfCompetitions_Players">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="GolfCompetitions" EntitySet="GolfCompetitions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GolfScores_GolfCompetitions" Association="Self.FK_GolfScores_GolfCompetitions">
+            <End Role="GolfCompetitions" EntitySet="GolfCompetitions" />
+            <End Role="GolfScores" EntitySet="GolfScores" />
+          </AssociationSet>
+          <FunctionImport Name="GetGolfLiveContestGroups" ReturnType="Collection(SportsDataPanelModel.GetGolfLiveContestGroups_Result)" />
+          <EntitySet Name="ContestGroupRounds" EntityType="SportsDataPanelModel.ContestGroupRound" />
+          <EntitySet Name="Countries" EntityType="SportsDataPanelModel.Country" />
+          <EntitySet Name="Seasons" EntityType="SportsDataPanelModel.Season" />
+          <AssociationSet Name="FK_ContestGroupRounds_ContestGroups" Association="SportsDataPanelModel.FK_ContestGroupRounds_ContestGroups">
+            <End Role="ContestGroup" EntitySet="ContestGroups" />
+            <End Role="ContestGroupRound" EntitySet="ContestGroupRounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GolfScores_ContestGroupRounds" Association="SportsDataPanelModel.FK_GolfScores_ContestGroupRounds">
+            <End Role="ContestGroupRound" EntitySet="ContestGroupRounds" />
+            <End Role="GolfScore" EntitySet="GolfScores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContestGroups_Countries" Association="SportsDataPanelModel.FK_ContestGroups_Countries">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="ContestGroup" EntitySet="ContestGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContestGroups_Seasons" Association="SportsDataPanelModel.FK_ContestGroups_Seasons">
+            <End Role="Season" EntitySet="Seasons" />
+            <End Role="ContestGroup" EntitySet="ContestGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Venues_Countries" Association="SportsDataPanelModel.FK_Venues_Countries">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Venue" EntitySet="Venues" />
+          </AssociationSet>
+          <FunctionImport Name="GetGolfLiveContestGroupPlayers" ReturnType="Collection(SportsDataPanelModel.GetGolfLiveContestGroupPlayers_Result)">
+          <Parameter Name="TourType" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetNextContestGroupId" ReturnType="Collection(Int64)" />
+          <FunctionImport Name="GetNextPlayerId" ReturnType="Collection(Int64)" />
+          <FunctionImport Name="GetNextVenueId" ReturnType="Collection(Int64)" />
+          <FunctionImport Name="GetGolfLiveContestGroupsEUTour" ReturnType="Collection(SportsDataPanelModel.GetGolfLiveContestGroupsEUTour_Result)" />
+          <FunctionImport Name="GetGolfLiveContestGroupsPGATour" ReturnType="Collection(SportsDataPanelModel.GetGolfLiveContestGroupsPGATour_Result)" />
+          <EntitySet Name="GolfHolesPoints" EntityType="SportsDataPanelModel.GolfHolesPoint" />
+          <FunctionImport Name="GetGolfLiveContestGroupsPgaTour1" ReturnType="Collection(SportsDataPanelModel.GetGolfLiveContestGroupsPgaTour1_Result)" />
+        </EntityContainer>
+        <ComplexType Name="GetGolfLiveContestGroups_Result">
+          <Property Type="Int32" Name="LeagueId" Nullable="false" />
+          <Property Type="Int32" Name="Bet365LeagueId" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="ContestGroupRound">
+          <Key>
+            <PropertyRef Name="ContestGroupRoundId" />
+          </Key>
+          <Property Name="ContestGroupRoundId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContestGroupId" Type="Int32" Nullable="false" />
+          <Property Name="Round" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="change_stamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="ContestGroup" Relationship="SportsDataPanelModel.FK_ContestGroupRounds_ContestGroups" FromRole="ContestGroupRound" ToRole="ContestGroup" />
+          <NavigationProperty Name="GolfScores" Relationship="SportsDataPanelModel.FK_GolfScores_ContestGroupRounds" FromRole="ContestGroupRound" ToRole="GolfScore" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemId" Type="Int64" />
+          <Property Name="CountryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Code2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CountryNameGerman" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryNameDanish" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryNameSwedish" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryNameNorwegian" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryNameItalian" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryNameSpanish" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryNameFrench" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SportCCCountryId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="SharkScoresCountryId" Type="Int32" />
+          <Property Name="change_stamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="ContestGroups" Relationship="SportsDataPanelModel.FK_ContestGroups_Countries" FromRole="Country" ToRole="ContestGroup" />
+          <NavigationProperty Name="Venues" Relationship="SportsDataPanelModel.FK_Venues_Countries" FromRole="Country" ToRole="Venue" />
+        </EntityType>
+        <EntityType Name="Season">
+          <Key>
+            <PropertyRef Name="SeasonId" />
+          </Key>
+          <Property Name="SeasonId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemId" Type="Int64" />
+          <Property Name="SeasonName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Code1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Code2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SeasonNameGerman" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SeasonNameDanish" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SeasonNameSwedish" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SeasonNameNorwegian" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SeasonNameItalian" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SeasonNameSpanish" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SeasonNameFrench" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="SportCCSeasonId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SortOrder" Type="Int16" />
+          <Property Name="change_stamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="ContestGroups" Relationship="SportsDataPanelModel.FK_ContestGroups_Seasons" FromRole="Season" ToRole="ContestGroup" />
+        </EntityType>
+        <Association Name="FK_ContestGroupRounds_ContestGroups">
+          <End Type="SportsDataPanelModel.ContestGroup" Role="ContestGroup" Multiplicity="1" />
+          <End Type="SportsDataPanelModel.ContestGroupRound" Role="ContestGroupRound" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContestGroup">
+              <PropertyRef Name="ContestGroupId" />
+            </Principal>
+            <Dependent Role="ContestGroupRound">
+              <PropertyRef Name="ContestGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GolfScores_ContestGroupRounds">
+          <End Type="SportsDataPanelModel.ContestGroupRound" Role="ContestGroupRound" Multiplicity="1" />
+          <End Type="SportsDataPanelModel.GolfScore" Role="GolfScore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContestGroupRound">
+              <PropertyRef Name="ContestGroupRoundId" />
+            </Principal>
+            <Dependent Role="GolfScore">
+              <PropertyRef Name="ContestGroupRoundId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContestGroups_Countries">
+          <End Type="SportsDataPanelModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="SportsDataPanelModel.ContestGroup" Role="ContestGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="ContestGroup">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContestGroups_Seasons">
+          <End Type="SportsDataPanelModel.Season" Role="Season" Multiplicity="1" />
+          <End Type="SportsDataPanelModel.ContestGroup" Role="ContestGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Season">
+              <PropertyRef Name="SeasonId" />
+            </Principal>
+            <Dependent Role="ContestGroup">
+              <PropertyRef Name="SeasonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Venues_Countries">
+          <End Type="SportsDataPanelModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="SportsDataPanelModel.Venue" Role="Venue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Venue">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetGolfLiveContestGroupPlayers_Result">
+          <Property Type="Int32" Name="ContestGroupId" Nullable="false" />
+          <Property Type="Int32" Name="GolfCompetitionId" Nullable="false" />
+          <Property Type="String" Name="PgaContestId" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="PlayerId" Nullable="false" />
+          <Property Type="String" Name="PgaPlayerId" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EuropeanTourId" Nullable="true" MaxLength="15" />
+        </ComplexType>
+        <ComplexType Name="GetGolfLiveContestGroupsEUTour_Result">
+          <Property Type="Int32" Name="ContestGroupId" Nullable="false" />
+          <Property Type="String" Name="EuTourId" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="GetGolfLiveContestGroupsPGATour_Result">
+          <Property Type="Int32" Name="ContestGroupId" Nullable="false" />
+          <Property Type="String" Name="PgaTourId" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <EntityType Name="GolfHolesPoint">
+          <Key>
+            <PropertyRef Name="GolfHoleId" />
+          </Key>
+          <Property Name="GolfHoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GolfCompetitionId" Type="Int32" Nullable="false" />
+          <Property Name="ContestGroupRoundId" Type="Int32" Nullable="false" />
+          <Property Name="HolePoint" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ParPoint" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="PointTypeId" Type="Int32" />
+          <Property Name="Yards" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="GetGolfLiveContestGroupsPgaTour1_Result">
+          <Property Type="Int32" Name="ContestGroupId" Nullable="false" />
+          <Property Type="String" Name="PgaTourId" Nullable="true" MaxLength="500" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SportsDataPanelModelStoreContainer" CdmEntityContainer="SportsDataPanelEntities">
+          <EntitySetMapping Name="ContestGroups">
+            <EntityTypeMapping TypeName="SportsDataPanelModel.ContestGroup">
+              <MappingFragment StoreEntitySet="ContestGroups">
+                <ScalarProperty Name="ContestGroupId" ColumnName="ContestGroupId" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+                <ScalarProperty Name="SportId" ColumnName="SportId" />
+                <ScalarProperty Name="LeagueId" ColumnName="LeagueId" />
+                <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="SportOrganizationId" ColumnName="SportOrganizationId" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="LeagueTypeId" ColumnName="LeagueTypeId" />
+                <ScalarProperty Name="LTTypeAndSurfaceId" ColumnName="LTTypeAndSurfaceId" />
+                <ScalarProperty Name="ContestTypeId" ColumnName="ContestTypeId" />
+                <ScalarProperty Name="ContestGroupName" ColumnName="ContestGroupName" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="ShortCode" ColumnName="ShortCode" />
+                <ScalarProperty Name="MobileShortName" ColumnName="MobileShortName" />
+                <ScalarProperty Name="IsInternational" ColumnName="IsInternational" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsLive" ColumnName="IsLive" />
+                <ScalarProperty Name="Ranking" ColumnName="Ranking" />
+                <ScalarProperty Name="HasTable" ColumnName="HasTable" />
+                <ScalarProperty Name="NameEnglish" ColumnName="NameEnglish" />
+                <ScalarProperty Name="NameDanish" ColumnName="NameDanish" />
+                <ScalarProperty Name="NameNorwegian" ColumnName="NameNorwegian" />
+                <ScalarProperty Name="NameSwedish" ColumnName="NameSwedish" />
+                <ScalarProperty Name="NameDeutsche" ColumnName="NameDeutsche" />
+                <ScalarProperty Name="NameItalian" ColumnName="NameItalian" />
+                <ScalarProperty Name="NameSpanish" ColumnName="NameSpanish" />
+                <ScalarProperty Name="NameSerbian" ColumnName="NameSerbian" />
+                <ScalarProperty Name="SportCCContestGroupId" ColumnName="SportCCContestGroupId" />
+                <ScalarProperty Name="CrawlerLink" ColumnName="CrawlerLink" />
+                <ScalarProperty Name="AutoUpdateMatches" ColumnName="AutoUpdateMatches" />
+                <ScalarProperty Name="SharkScoresId" ColumnName="SharkScoresId" />
+                <ScalarProperty Name="Goals" ColumnName="Goals" />
+                <ScalarProperty Name="Cards" ColumnName="Cards" />
+                <ScalarProperty Name="Subs" ColumnName="Subs" />
+                <ScalarProperty Name="Lineups" ColumnName="Lineups" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Finished" ColumnName="Finished" />
+                <ScalarProperty Name="WinPoints" ColumnName="WinPoints" />
+                <ScalarProperty Name="WinETPenPoints" ColumnName="WinETPenPoints" />
+                <ScalarProperty Name="LossPoints" ColumnName="LossPoints" />
+                <ScalarProperty Name="LossETPenPoints" ColumnName="LossETPenPoints" />
+                <ScalarProperty Name="change_stamp" ColumnName="change_stamp" />
+                <ScalarProperty Name="TotalContestTeams" ColumnName="TotalContestTeams" />
+                <ScalarProperty Name="LeagueNote" ColumnName="LeagueNote" />
+                <ScalarProperty Name="Bet365LeagueId" ColumnName="Bet365LeagueId" />
+                <ScalarProperty Name="FixtureLink1" ColumnName="FixtureLink1" />
+                <ScalarProperty Name="FixtureLink2" ColumnName="FixtureLink2" />
+                <ScalarProperty Name="FixtureLink3" ColumnName="FixtureLink3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GolfCompetitions">
+            <EntityTypeMapping TypeName="SportsDataPanelModel.GolfCompetition">
+              <MappingFragment StoreEntitySet="GolfCompetitions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ContestGroupId" ColumnName="ContestGroupId" />
+                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+                <ScalarProperty Name="TotalPointsStatus" ColumnName="TotalPointsStatus" />
+                <ScalarProperty Name="TotalPointsStrokes" ColumnName="TotalPointsStrokes" />
+                <ScalarProperty Name="TotalPointsTotalToPar" ColumnName="TotalPointsTotalToPar" />
+                <ScalarProperty Name="TotalPointsPosition" ColumnName="TotalPointsPosition" />
+                <ScalarProperty Name="TotalPointsTied" ColumnName="TotalPointsTied" />
+                <ScalarProperty Name="TotalPointsPlayoffs" ColumnName="TotalPointsPlayoffs" />
+                <ScalarProperty Name="Thru" ColumnName="Thru" />
+                <ScalarProperty Name="TotalPointsLastPosition" ColumnName="TotalPointsLastPosition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GolfScores">
+            <EntityTypeMapping TypeName="SportsDataPanelModel.GolfScore">
+              <MappingFragment StoreEntitySet="GolfScores">
+                <ScalarProperty Name="Thru" ColumnName="Thru" />
+                <ScalarProperty Name="StartHoleValue" ColumnName="StartHoleValue" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GolfCompetitionId" ColumnName="GolfCompetitionId" />
+                <ScalarProperty Name="ContestGroupRoundId" ColumnName="ContestGroupRoundId" />
+                <ScalarProperty Name="RoundStatus" ColumnName="RoundStatus" />
+                <ScalarProperty Name="RoundStrokes" ColumnName="RoundStrokes" />
+                <ScalarProperty Name="RoundTotalPar" ColumnName="RoundTotalPar" />
+                <ScalarProperty Name="RoundHolesPlayed" ColumnName="RoundHolesPlayed" />
+                <ScalarProperty Name="RoundTeeTime" ColumnName="RoundTeeTime" />
+                <ScalarProperty Name="RoundCourse" ColumnName="RoundCourse" />
+                <ScalarProperty Name="RoundStartingTee" ColumnName="RoundStartingTee" />
+                <ScalarProperty Name="RoundPosition" ColumnName="RoundPosition" />
+                <ScalarProperty Name="RoundTied" ColumnName="RoundTied" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="SportsDataPanelModel.Player">
+              <MappingFragment StoreEntitySet="Players">
+                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+                <ScalarProperty Name="SportId" ColumnName="SportId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="PlayerPositionId" ColumnName="PlayerPositionId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="OtherName" ColumnName="OtherName" />
+                <ScalarProperty Name="Hand" ColumnName="Hand" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="SportCCPlayerId" ColumnName="SportCCPlayerId" />
+                <ScalarProperty Name="MarketValue" ColumnName="MarketValue" />
+                <ScalarProperty Name="Foot" ColumnName="Foot" />
+                <ScalarProperty Name="PlayerAgent" ColumnName="PlayerAgent" />
+                <ScalarProperty Name="BirthCityId" ColumnName="BirthCityId" />
+                <ScalarProperty Name="BirthCountryId" ColumnName="BirthCountryId" />
+                <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
+                <ScalarProperty Name="SportingLifePlayerId" ColumnName="SportingLifePlayerId" />
+                <ScalarProperty Name="MatchedWithProvider" ColumnName="MatchedWithProvider" />
+                <ScalarProperty Name="CreatedByRole" ColumnName="CreatedByRole" />
+                <ScalarProperty Name="SharkScoresId" ColumnName="SharkScoresId" />
+                <ScalarProperty Name="SoccerwayPlayerId" ColumnName="SoccerwayPlayerId" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="CountryOfBirth" ColumnName="CountryOfBirth" />
+                <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+                <ScalarProperty Name="StatsComPlayerId" ColumnName="StatsComPlayerId" />
+                <ScalarProperty Name="change_stamp" ColumnName="change_stamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Venues">
+            <EntityTypeMapping TypeName="SportsDataPanelModel.Venue">
+              <MappingFragment StoreEntitySet="Venues">
+                <ScalarProperty Name="VenueId" ColumnName="VenueId" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+                <ScalarProperty Name="SportId" ColumnName="SportId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="VenueName" ColumnName="VenueName" />
+                <ScalarProperty Name="EstablishedDate" ColumnName="EstablishedDate" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="ContestGroup" ColumnName="ContestGroup" />
+                <ScalarProperty Name="CourtNo" ColumnName="CourtNo" />
+                <ScalarProperty Name="SportCCVenueId" ColumnName="SportCCVenueId" />
+                <ScalarProperty Name="CreatedByRole" ColumnName="CreatedByRole" />
+                <ScalarProperty Name="change_stamp" ColumnName="change_stamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetGolfLiveContestGroups" FunctionName="SportsDataPanelModel.Store.GetGolfLiveContestGroups">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SportsDataPanelModel.GetGolfLiveContestGroups_Result">
+                <ScalarProperty Name="LeagueId" ColumnName="LeagueId" />
+                <ScalarProperty Name="Bet365LeagueId" ColumnName="Bet365LeagueId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ContestGroupRounds">
+            <EntityTypeMapping TypeName="SportsDataPanelModel.ContestGroupRound">
+              <MappingFragment StoreEntitySet="ContestGroupRounds">
+                <ScalarProperty Name="change_stamp" ColumnName="change_stamp" />
+                <ScalarProperty Name="Round" ColumnName="Round" />
+                <ScalarProperty Name="ContestGroupId" ColumnName="ContestGroupId" />
+                <ScalarProperty Name="ContestGroupRoundId" ColumnName="ContestGroupRoundId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="SportsDataPanelModel.Country">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="change_stamp" ColumnName="change_stamp" />
+                <ScalarProperty Name="SharkScoresCountryId" ColumnName="SharkScoresCountryId" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="SportCCCountryId" ColumnName="SportCCCountryId" />
+                <ScalarProperty Name="CountryNameFrench" ColumnName="CountryNameFrench" />
+                <ScalarProperty Name="CountryNameSpanish" ColumnName="CountryNameSpanish" />
+                <ScalarProperty Name="CountryNameItalian" ColumnName="CountryNameItalian" />
+                <ScalarProperty Name="CountryNameNorwegian" ColumnName="CountryNameNorwegian" />
+                <ScalarProperty Name="CountryNameSwedish" ColumnName="CountryNameSwedish" />
+                <ScalarProperty Name="CountryNameDanish" ColumnName="CountryNameDanish" />
+                <ScalarProperty Name="CountryNameGerman" ColumnName="CountryNameGerman" />
+                <ScalarProperty Name="Code2" ColumnName="Code2" />
+                <ScalarProperty Name="Code1" ColumnName="Code1" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seasons">
+            <EntityTypeMapping TypeName="SportsDataPanelModel.Season">
+              <MappingFragment StoreEntitySet="Seasons">
+                <ScalarProperty Name="change_stamp" ColumnName="change_stamp" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="SportCCSeasonId" ColumnName="SportCCSeasonId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="SeasonNameFrench" ColumnName="SeasonNameFrench" />
+                <ScalarProperty Name="SeasonNameSpanish" ColumnName="SeasonNameSpanish" />
+                <ScalarProperty Name="SeasonNameItalian" ColumnName="SeasonNameItalian" />
+                <ScalarProperty Name="SeasonNameNorwegian" ColumnName="SeasonNameNorwegian" />
+                <ScalarProperty Name="SeasonNameSwedish" ColumnName="SeasonNameSwedish" />
+                <ScalarProperty Name="SeasonNameDanish" ColumnName="SeasonNameDanish" />
+                <ScalarProperty Name="SeasonNameGerman" ColumnName="SeasonNameGerman" />
+                <ScalarProperty Name="Code2" ColumnName="Code2" />
+                <ScalarProperty Name="Code1" ColumnName="Code1" />
+                <ScalarProperty Name="SeasonName" ColumnName="SeasonName" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+                <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetGolfLiveContestGroupPlayers" FunctionName="SportsDataPanelModel.Store.GetGolfLiveContestGroupPlayers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SportsDataPanelModel.GetGolfLiveContestGroupPlayers_Result">
+                <ScalarProperty Name="ContestGroupId" ColumnName="ContestGroupId" />
+                <ScalarProperty Name="GolfCompetitionId" ColumnName="GolfCompetitionId" />
+                <ScalarProperty Name="PgaContestId" ColumnName="PgaContestId" />
+                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+                <ScalarProperty Name="PgaPlayerId" ColumnName="PgaPlayerId" />
+                <ScalarProperty Name="EuropeanTourId" ColumnName="EuropeanTourId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetNextContestGroupId" FunctionName="SportsDataPanelModel.Store.GetNextContestGroupId" />
+          <FunctionImportMapping FunctionImportName="GetNextPlayerId" FunctionName="SportsDataPanelModel.Store.GetNextPlayerId" />
+          <FunctionImportMapping FunctionImportName="GetNextVenueId" FunctionName="SportsDataPanelModel.Store.GetNextVenueId" />
+          <FunctionImportMapping FunctionImportName="GetGolfLiveContestGroupsEUTour" FunctionName="SportsDataPanelModel.Store.GetGolfLiveContestGroupsEUTour">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SportsDataPanelModel.GetGolfLiveContestGroupsEUTour_Result">
+                <ScalarProperty Name="ContestGroupId" ColumnName="ContestGroupId" />
+                <ScalarProperty Name="EuTourId" ColumnName="EuTourId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="GolfHolesPoints">
+            <EntityTypeMapping TypeName="SportsDataPanelModel.GolfHolesPoint">
+              <MappingFragment StoreEntitySet="GolfHolesPoints">
+                <ScalarProperty Name="Yards" ColumnName="Yards" />
+                <ScalarProperty Name="PointTypeId" ColumnName="PointTypeId" />
+                <ScalarProperty Name="ParPoint" ColumnName="ParPoint" />
+                <ScalarProperty Name="HolePoint" ColumnName="HolePoint" />
+                <ScalarProperty Name="ContestGroupRoundId" ColumnName="ContestGroupRoundId" />
+                <ScalarProperty Name="GolfCompetitionId" ColumnName="GolfCompetitionId" />
+                <ScalarProperty Name="GolfHoleId" ColumnName="GolfHoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetGolfLiveContestGroupsPgaTour1" FunctionName="SportsDataPanelModel.Store.GetGolfLiveContestGroupsPgaTour">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SportsDataPanelModel.GetGolfLiveContestGroupsPgaTour1_Result">
+                <ScalarProperty Name="ContestGroupId" ColumnName="ContestGroupId" />
+                <ScalarProperty Name="PgaTourId" ColumnName="PgaTourId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
